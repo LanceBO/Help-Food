@@ -4,18 +4,18 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(params[:booking])
+    @booking = Booking.new(params[:booking_params])
   end
 
   def destroy
-    @booking = Booking.find(params[:booking])
+    @booking = Booking.find(params[:booking_params])
   end
 
  def validate
  end
 
 def show
-  @booking = Booking.find(params[:id])
+  @booking = Booking.find(params[:booking_params])
 
 end
 
@@ -27,7 +27,7 @@ end
   private
 
   def booking_params
-    params.require(:booking).permit(:user_id)
+    params.require(:booking).permit(:user_id, :food_id)
   end
 
 end
