@@ -1,0 +1,7 @@
+<h1> Le Wagon Fridge </h1>
+
+<% @foods.each do |food| %>
+
+<h2> <%= link_to food.name, food_path(food) %> </h2>
+
+<% end %>
