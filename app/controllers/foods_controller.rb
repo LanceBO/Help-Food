@@ -30,11 +30,6 @@ class FoodsController < ApplicationController
     authorize @food
   end
 
-  def create
-    @food = Food.new(params[:food])
-    authorize @food
-  end
-
   def edit
     @food = Food.find(params[:id])
     authorize @food
@@ -61,5 +56,4 @@ class FoodsController < ApplicationController
   def food_params
     params.require(:food).permit(:name, :category, :expiration_date)
   end
-
 end
