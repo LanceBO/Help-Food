@@ -16,6 +16,7 @@
   font-size: 36px;
   text-align: center;
   width: 3em;
+  text-decoration: none;
 }
 
 .icon-bar a:hover {
@@ -24,4 +25,8 @@
 
 .active i {
   color: $orange;
+}
+
+.footer-text {
+  font-size: 12px;
 }
