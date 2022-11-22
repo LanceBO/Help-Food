@@ -3,7 +3,7 @@
 <%= food.name  %> <%= food.category  %> <%= food.expiration_date  %>
 
 <%= simple_form_for [@food, @booking] do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
+  <%= f.input :start_date, as: :date %>
+  <%= f.input :end_date, as: :date %>
   <%= f.button :submit %>
 <% end %>

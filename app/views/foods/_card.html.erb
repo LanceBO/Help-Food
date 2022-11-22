@@ -1,30 +1,11 @@
 <div class="foodcards">
   <% @foods.each do |food| %>
-    <div class="foodcard">
-      <div id="carouselExampleIndicators" class="carousel slide">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <div class="card border-0">
+        <%= link_to image_tag("https://fr.rc-cdn.community.thermomix.com/recipeimage/2nc1g3lr-77de7-564089-cfcd2-b67ljhi0/0d0d5043-f22b-4b08-8d9c-2578e0802b37/main/salade-verte.jpg"), food_path(food), class:"card-img-top" %>
+        <div class="card-body">
+          <h3><%= link_to food.name, food_path(food) %></h3>
+          <p>Expiry date: <%= food.expiration_date %></p>
         </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="https://fr.rc-cdn.community.thermomix.com/recipeimage/2nc1g3lr-77de7-564089-cfcd2-b67ljhi0/0d0d5043-f22b-4b08-8d9c-2578e0802b37/main/salade-verte.jpg" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTddnyhy8vMWTLrb05Bte8MAvZc9o6eaihQ2g&usqp=CAU" class="d-block w-100" alt="...">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
       </div>
-      <h3><%= link_to food.name, food_path(food) %></h3>
-      <p>Expiry date: <%= food.expiration_date %></p>
-    </div>
   <% end %>
 </div>

@@ -2,40 +2,28 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 16px;
+  margin-top: 2em;
 }
 
-.foodcard {
-  border-radius: 12px;
-
+.foodcards img {
+  width: inherit;
 }
 
-/** Bootstrap carousel patch **/
-
-.carousel-inner {
-  border-radius: 12px;
+.card {
+  border-radius: 10px;
 }
 
-.carousel-item img
- {
-  object-fit: cover;
-  aspect-ratio: 20 / 19;
+.card img {
+  border-radius: 10px;
 }
 
-.carousel-indicators [data-bs-target] {
-  width: 6px;
-  height: 6px;
-  border-radius: 100%;
-}
-
-/** Responsive **/
-
-@media (max-width: 575px) {
+@media (max-width: 767px) {
   .foodcards {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-@media (min-width: 576px) and (max-width: 767px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .foodcards {
     grid-template-columns: 1fr 1fr 1fr;
   }
