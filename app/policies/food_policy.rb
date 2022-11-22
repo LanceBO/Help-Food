@@ -27,7 +27,7 @@ class FoodPolicy < ApplicationPolicy
   end
 
   def update?
-    false
+    record.user == user
   end
 
   def destroy?

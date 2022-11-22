@@ -8,3 +8,10 @@
   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
 %>
 <% end %>
+
+<% if policy(@food).edit? %>
+<%= link_to "Edit",
+  edit_food_path(@food),
+  data: {turbo_method: :edit, turbo_confirm: "Are you sure?"}
+%>
+<% end %>
