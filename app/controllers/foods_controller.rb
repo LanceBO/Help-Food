@@ -18,8 +18,10 @@ class FoodsController < ApplicationController
   end
 
   def create
-    @food = Food.new(params[:food])
+    @food = Food.new(food_params)
     authorize @food
+    @food.save
+    redirect_to foods_path
   end
 
   def edit
@@ -46,4 +48,7 @@ class FoodsController < ApplicationController
     @food = Food.find(params[:id])
   end
 
+  def food_params
+    params.require(:food).permit(:name, :category, :expiration_date)
+  end
 end
