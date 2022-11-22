@@ -1,5 +1,8 @@
-<h2> <%= @food.name  %> <%= @food.category %> </h2>
+<h2> <%= @food.name  %> <%= @food.category %> <%= @food.expiration_date %> </h2>
 
 <%= link_to "Back to Fridge", foods_path  %>
 
-
+<%= link_to "Delete",
+  food_path(@food),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
