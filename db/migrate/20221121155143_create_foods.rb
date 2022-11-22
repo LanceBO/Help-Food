@@ -4,8 +4,7 @@ class CreateFoods < ActiveRecord::Migration[7.0]
       t.string :name
       t.string :category
       t.datetime :expiration_date
-      t.integer :user_id
-
+      t.references :user, null: false, foreign_key: true
       t.timestamps
     end
   end

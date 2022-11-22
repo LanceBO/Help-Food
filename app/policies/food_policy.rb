@@ -31,7 +31,7 @@ class FoodPolicy < ApplicationPolicy
   end
 
   def destroy?
-    false
+    record.user == user
   end
 
 end

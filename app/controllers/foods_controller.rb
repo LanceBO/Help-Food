@@ -20,6 +20,7 @@ class FoodsController < ApplicationController
 
   def create
     @food = Food.new(food_params)
+    @food.user = current_user
     authorize @food
     @food.save
     redirect_to foods_path
@@ -43,8 +44,8 @@ class FoodsController < ApplicationController
     @food = Food.find(params[:id])
     @food.destroy
     flash[:success] = "Your gift item was successfully destroyed."
+    redirect_to foods_path, status: :see_other
     authorize @food
-    redirect_to foods_url
   end
 
   private
