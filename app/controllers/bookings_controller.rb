@@ -6,9 +6,15 @@ class BookingsController < ApplicationController
   end
 
   def create
-    authorize @booking
+    @food = Food.find(params[:food_id])
     @booking = Booking.new(params[:booking_params])
+    @booking.food = @food
+    @booking.user = current_user
     authorize @booking
+    if @booking.save
+      flash[:notice] = "Successfully created booking."
+      redirect_to food_path
+    end
   end
 
   def destroy
@@ -19,29 +25,33 @@ class BookingsController < ApplicationController
     redirect_to bookings_url
   end
 
- def validate
-  authorize @booking
- end
+  def validate
+    authorize @booking
+  end
 
-def show
-  @booking = Booking.find(params[:booking_params])
-  authorize @booking
-end
 
-def index
-  @bookings = Booking.all
-  authorize @booking
-end
+  def show
+    @booking = Booking.find(params[:booking_params])
+    authorize @booking
+  end
 
-def update
-  @booking = Booking.edit(params[:booking_params])
-  authorize @booking
-end
+  def index
+    skip_policy_scope
+    @bookings = Booking.all
+    authorize @bookings
+  end
 
-def update
-  @booking = Booking.edit(params[:booking_params])
-  authorize @booking
-end
+  def update
+    @booking = Booking.edit(params[:booking_params])
+    authorize @booking
+  end
+
+
+  def update
+    @booking = Booking.edit(params[:booking_params])
+    authorize @booking
+  end
+
 
 
   private

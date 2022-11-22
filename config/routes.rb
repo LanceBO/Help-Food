@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   # root "articles#index"
   # resources :users
 
-  resources :foods
-  #   resources :bookings
+  resources :foods do
+
+    resources :bookings
+  end
   # end
 end
