@@ -26,3 +26,17 @@
   height: 6px;
   border-radius: 100%;
 }
+
+/** Responsive **/
+
+@media (max-width: 575px) {
+  .foodcards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .foodcards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
