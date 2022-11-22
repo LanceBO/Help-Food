@@ -1,21 +1,36 @@
-<h2> <%= @food.name  %> <%= @food.category %> <%= @food.expiration_date %> </h2>
+<div class="navshow">
+  <div class="backto">
+    <i class="fa-solid fa-chevron-left"></i>
+    <%= link_to "Back to Fridge", foods_path  %>
+  </div>
 
-<%= link_to "Back to Fridge", foods_path  %>
+  <div class="right-buttons">
+    <% if policy(@food).destroy? %>
+    <button type="button" class="btn btn-secondary">
+    <i class="fa-solid fa-trash"></i>
+    <%= link_to "Delete",
+      food_path(@food),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+    %>
+    <% end %>
+    </button>
 
-<% if policy(@food).destroy? %>
-<%= link_to "Delete",
-  food_path(@food),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+    <% if policy(@food).edit? %>
+    <button type="button" class="btn btn-secondary">
+    <i class="fa-solid fa-pen-to-square"></i>
+    <%= link_to "Edit",
+      edit_food_path(@food),
+      data: {turbo_method: :edit, turbo_confirm: "Are you sure?"}
+    %>
+    <% end %>
+    </button>
+  </div>
+</div>
+
+<h2> <%= @food.name  %> <%= @food.category %> </h2>
+<h6> <%= @food.expiration_date %> </h6>
+
+<button type="button" class="btn btn-primary"><%= link_to "Reserve this food",
+new_food_booking_path(@food.id)
 %>
-<% end %>
-
-<% if policy(@food).edit? %>
-<%= link_to "Edit",
-  edit_food_path(@food),
-  data: {turbo_method: :edit, turbo_confirm: "Are you sure?"}
-%>
-<% end %>
-
-<%= link_to "Reserve this food",
-  new_food_booking_path(@food.id)
-%>
+</button>

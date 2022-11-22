@@ -10,4 +10,5 @@ food1.save
 food2 = Food.new(name: "Favori", category: "Sando")
 food2.save
 
-
+food3 = Food.new(name: "Favori", category: "Sando")
+food3.save
