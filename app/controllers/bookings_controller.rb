@@ -3,17 +3,19 @@ class BookingsController < ApplicationController
   def new
     authorize @booking
     @booking = Booking.new
+    authorize @booking
   end
 
   def create
     authorize @booking
     @booking = Booking.new(params[:booking_params])
+    authorize @booking
   end
 
   def destroy
-    authorize @booking
     @booking = Booking.find(params[:booking_params])
     @booking.destroy
+    authorize @booking
     flash[:success] = "Your food booking was successfully deleted."
     redirect_to bookings_url
   end
@@ -25,12 +27,18 @@ class BookingsController < ApplicationController
 def show
   authorize @booking
   @booking = Booking.find(params[:booking_params])
-
+  authorize @booking
 end
 
 def index
   authorize @booking
   @bookings = Booking.all
+  authorize @booking
+end
+
+def update
+  @booking = Booking.edit(params[:booking_params])
+  authorize @booking
 end
 
 def update
