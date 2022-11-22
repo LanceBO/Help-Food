@@ -19,8 +19,11 @@ class FoodsController < ApplicationController
   end
 
   def create
-    @food = Food.new(params[:food])
+    @food = Food.new(food_params)
+    @food.user = current_user
     authorize @food
+    @food.save
+    redirect_to foods_path
   end
 
   def edit
@@ -28,16 +31,10 @@ class FoodsController < ApplicationController
     authorize @food
   end
 
-  def create
-    authorize @food
-    @food = Food.new(params[:food])
-  end
-
   def edit
-    authorize @food
     @food = Food.find(params[:id])
+    authorize @food
   end
-
 
   def validate
     authorize @food
@@ -47,8 +44,8 @@ class FoodsController < ApplicationController
     @food = Food.find(params[:id])
     @food.destroy
     flash[:success] = "Your gift item was successfully destroyed."
+    redirect_to foods_path, status: :see_other
     authorize @food
-    redirect_to foods_url
   end
 
   private
@@ -57,5 +54,7 @@ class FoodsController < ApplicationController
     @food = Food.find(params[:id])
   end
 
-
+  def food_params
+    params.require(:food).permit(:name, :category, :expiration_date)
+  end
 end

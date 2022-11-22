@@ -1,7 +1,6 @@
 class BookingsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   def new
-    authorize @booking
     @booking = Booking.new
     authorize @booking
   end
@@ -30,6 +29,7 @@ class BookingsController < ApplicationController
     authorize @booking
   end
 
+
   def show
     @booking = Booking.find(params[:booking_params])
     authorize @booking
@@ -46,10 +46,12 @@ class BookingsController < ApplicationController
     authorize @booking
   end
 
+
   def update
-    authorize @booking
     @booking = Booking.edit(params[:booking_params])
+    authorize @booking
   end
+
 
 
   private

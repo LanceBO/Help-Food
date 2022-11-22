@@ -19,7 +19,11 @@ class FoodPolicy < ApplicationPolicy
   end
 
   def create?
-    false
+    true
+  end
+
+  def new?
+    create?
   end
 
   def update?
@@ -27,7 +31,7 @@ class FoodPolicy < ApplicationPolicy
   end
 
   def destroy?
-    false
+    record.user == user
   end
 
 end
