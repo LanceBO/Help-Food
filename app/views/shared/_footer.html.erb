@@ -1,6 +1,6 @@
 <div class="icon-bar">
-  <a class="active" href="#"><i class="fa fa-home"></i></a>
-  <a href="#"><i class="fa fa-search"></i></a>
-  <a href="#"><i class="fa fa-door-open"></i></a>
-  <a href="#"><i class="fa fa-bars"></i></a>
+  <%= link_to "<i class=\"fa fa-home\"></i><div class=\"footer-text\">Accueil</div>".html_safe, "/foods", class: 'active' %>
+  <%= link_to "<i class=\"fa fa-search\"></i><div class=\"footer-text\">Rechercher</div>".html_safe, "/foods" %>
+  <%= link_to "<i class=\"fa fa-door-open\"></i><div class=\"footer-text\">Frigots</div>".html_safe, "/foods" %>
+  <%= link_to "<i class=\"fa fa-bars\"></i><div class=\"footer-text\">Réglages</div>".html_safe, "/users/sign_in"%>
 </div>
