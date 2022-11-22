@@ -1,0 +1,9 @@
+<h1> Your order </h1>
+<% food = Food.find(params[:food_id]) %>
+<%= food.name  %> <%= food.category  %> <%= food.expiration_date  %>
+
+<%= simple_form_for [@food, @booking] do |f| %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.button :submit %>
+<% end %>

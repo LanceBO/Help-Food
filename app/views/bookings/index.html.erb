@@ -1,4 +1,11 @@
-<h1>Mon Panier</h1>
+<p>Hello</p>
+
+<% @bookings.each do |booking| %>
+<%= booking  %>
+<% end %>
+
+
+<%# <h1>Mon Panier</h1>
 <ul class="list-inline tabs-underlined">
   <li>
     <a href="#" class="tab-underlined active">Voir mes produits </a>
@@ -9,5 +16,5 @@
   <li>
    <%= link_to "Retour au frigo", "/foods", class: "nav-link" %>
 
-  </li>
-</ul>
+  <%# </li>
+</ul> %>
