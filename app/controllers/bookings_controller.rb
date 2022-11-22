@@ -1,20 +1,24 @@
 class BookingsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   def new
+    @food = Food.find(params[:food_id])
     @booking = Booking.new
     authorize @booking
   end
 
   def create
     @food = Food.find(params[:food_id])
-    @booking = Booking.new(params[:booking_params])
+    @booking = Booking.new(booking_params)
     @booking.food = @food
     @booking.user = current_user
     authorize @booking
     if @booking.save
       flash[:notice] = "Successfully created booking."
-      redirect_to food_path
+      redirect_to foods_path
+    else
+      render :new
     end
+
   end
 
   def destroy
@@ -57,7 +61,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:user_id, :food_id)
+    params.require(:booking).permit(:start_date, :end_date, :user_id, :food_id)
   end
 
 end

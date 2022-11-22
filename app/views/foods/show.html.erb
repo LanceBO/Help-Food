@@ -15,3 +15,7 @@
   data: {turbo_method: :edit, turbo_confirm: "Are you sure?"}
 %>
 <% end %>
+
+<%= link_to "Reserve this food",
+  new_food_booking_path(@food.id)
+%>
