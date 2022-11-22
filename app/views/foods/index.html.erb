@@ -1,4 +1,12 @@
-<h1> Le Wagon Fridge </h1>
+<h1> Bonjour
+
+<% if current_user %>
+<%= current_user.first_name %>,
+<% else %>
+!
+<% end %>
+
+</h1>
 
 <% @foods.each do |food| %>
 
