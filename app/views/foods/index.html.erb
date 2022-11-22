@@ -8,10 +8,13 @@
 
 </h1>
 
-<% @foods.each do |food| %>
+<%= render "foods/card" %>
+
+<!-- -->
+<!-- <% @foods.each do |food| %>
 
 <h2> <%= link_to food.name, food_path(food) %> </h2>
 
-<% end %>
+<% end %>-->
 
 <%= link_to "Add a food", new_food_path  %>

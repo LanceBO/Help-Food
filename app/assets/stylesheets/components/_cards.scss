@@ -1,0 +1,28 @@
+.foodcards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.foodcard {
+  border-radius: 12px;
+
+}
+
+/** Bootstrap carousel patch **/
+
+.carousel-inner {
+  border-radius: 12px;
+}
+
+.carousel-item img
+ {
+  object-fit: cover;
+  aspect-ratio: 20 / 19;
+}
+
+.carousel-indicators [data-bs-target] {
+  width: 6px;
+  height: 6px;
+  border-radius: 100%;
+}
