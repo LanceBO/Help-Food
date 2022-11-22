@@ -31,15 +31,14 @@ class FoodsController < ApplicationController
   end
 
   def create
-    authorize @food
     @food = Food.new(params[:food])
+    authorize @food
   end
 
   def edit
-    authorize @food
     @food = Food.find(params[:id])
+    authorize @food
   end
-
 
   def validate
     authorize @food
