@@ -1,6 +1,5 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +8,10 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 6em;
+}
+
+.navbar-brand { /** overwrite bootstrap **/
+  width: 6em;
+  margin-left: auto;
+  margin-right: auto;
 }
