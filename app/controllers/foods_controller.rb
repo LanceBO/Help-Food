@@ -1,5 +1,6 @@
 class FoodsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home, :index]
+  skip_before_action :authenticate_user!, only: [:home, :index, :show]
+
   def index
     skip_policy_scope
     @foods = Food.all
@@ -7,13 +8,24 @@ class FoodsController < ApplicationController
   end
 
   def show
-    authorize @food
+    skip_policy_scope
     @food = Food.find(params[:id])
+    authorize @food
   end
 
   def new
-    authorize @food
     @food = Food.new
+    authorize @food
+  end
+
+  def create
+    @food = Food.new(params[:food])
+    authorize @food
+  end
+
+  def edit
+    @food = Food.find(params[:id])
+    authorize @food
   end
 
   def create
@@ -32,10 +44,16 @@ class FoodsController < ApplicationController
   end
 
   def destroy
-    authorize @food
     @food = Food.find(params[:id])
     @food.destroy
     flash[:success] = "Your gift item was successfully destroyed."
+    authorize @food
     redirect_to foods_url
+  end
+
+  private
+
+  def set_food
+    @food = Food.find(params[:id])
   end
 end
