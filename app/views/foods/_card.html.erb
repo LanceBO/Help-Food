@@ -24,8 +24,7 @@
         </button>
       </div>
       <h3><%= link_to food.name, food_path(food) %></h3>
-      <p>À partir de 577€/personne - 3 jours</p>
-      <div class="rating">5.0<i class="fa-solid fa-star"></i></div>
+      <p>Expiry date: <%= food.expiration_date %></p>
     </div>
   <% end %>
 </div>
