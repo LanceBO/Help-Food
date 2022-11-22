@@ -10,11 +10,17 @@
 }
 
 .card {
-  border-radius: 10px;
+  padding: 20px;
+  border-radius: 20px;
 }
 
-.card img {
-  border-radius: 10px;
+.expirydate {
+  color: #999999;
+  font-size: 14px;
+}
+
+.expirydate span {
+  display: block;
 }
 
 @media (max-width: 767px) {
