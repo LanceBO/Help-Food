@@ -2,7 +2,9 @@
 
 <%= link_to "Back to Fridge", foods_path  %>
 
+<% if policy(@food).destroy? %>
 <%= link_to "Delete",
   food_path(@food),
   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
 %>
+<% end %>
