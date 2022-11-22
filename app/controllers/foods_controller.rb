@@ -31,9 +31,11 @@ class FoodsController < ApplicationController
     authorize @food
   end
 
-  def edit
+  def update
     @food = Food.find(params[:id])
+    @food.update(food_params)
     authorize @food
+    redirect_to foods_path
   end
 
   def validate
