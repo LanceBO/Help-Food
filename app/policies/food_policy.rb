@@ -19,7 +19,11 @@ class FoodPolicy < ApplicationPolicy
   end
 
   def create?
-    false
+    true
+  end
+
+  def new?
+    create?
   end
 
   def update?
