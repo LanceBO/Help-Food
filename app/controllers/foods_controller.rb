@@ -20,10 +20,14 @@ class FoodsController < ApplicationController
 
   def create
     @food = Food.new(food_params)
+
     @food.user = current_user
     authorize @food
-    @food.save
+    if @food.save
     redirect_to foods_path
+    else
+    render :new
+    end
   end
 
   def edit
@@ -57,6 +61,6 @@ class FoodsController < ApplicationController
   end
 
   def food_params
-    params.require(:food).permit(:name, :category, :expiration_date)
+    params.require(:food).permit(:name, :category, :expiration_date, :photo)
   end
 end
