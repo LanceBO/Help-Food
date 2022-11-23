@@ -14,7 +14,16 @@
   object-fit: contain;
 }
 
+.product-content h1 {
+  margin-bottom: 0;
+}
+
 .center-content {
   display: flex;
   justify-content: center;
+}
+
+.category {
+  color: #999999;
+  font-size: 16px
 }
