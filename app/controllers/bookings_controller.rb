@@ -7,10 +7,10 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @food = Food.find(params[:food_id])
     @booking = Booking.new(booking_params)
-    @booking.food = @food
+    @food = Food.find(params[:food_id])
     @booking.user = current_user
+    @booking.food = @food
     authorize @booking
     if @booking.save
       flash[:notice] = "Successfully created booking."
