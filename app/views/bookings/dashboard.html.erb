@@ -1,19 +1,34 @@
-<h1>Account</h1>
-<ul>
-<li><%= @user.first_name  %> </li>
-<li><%= @user.last_name  %></li>
-<li><%= @user.email  %></li>
-</ul>
-<h2> My Bookings </h2>
-<ul>
-<% @bookings.each do |booking|  %>
-<li> <%= booking.food.name  %> </li>
-<% end %>
-</ul>
+<div class="navshow">
+  <div class="backto">
+    <i class="fa-solid fa-chevron-left"></i>
+    <%= link_to "Back to home", foods_path  %>
+  </div>
+</div>
 
-<h2> My Fridge </h2>
-<ul>
-<% @foods.each do |food| %>
-<li> <%= food.name %> </li>
-<% end %>
-</ul>
+<h1 class="text-center">Account</h1>
+<div class="center-content">
+  <div class="card border-0 inner-card multiple">
+    <h2> My Informations </h2>
+    <ul>
+    <li><%= @user.first_name  %> </li>
+    <li><%= @user.last_name  %></li>
+    <li><%= @user.email  %></li>
+    </ul>
+  </div>
+  <div class="card border-0 inner-card multiple">
+    <h2> My Bookings </h2>
+    <ul>
+    <% @bookings.each do |booking|  %>
+    <li> <%= booking.food.name  %> </li>
+    <% end %>
+    </ul>
+  </div>
+  <div class="card border-0 inner-card multiple">
+    <h2> My Fridge </h2>
+    <ul>
+    <% @foods.each do |food| %>
+    <li> <%= food.name %> </li>
+    <% end %>
+    </ul>
+  </div>
+</div>
