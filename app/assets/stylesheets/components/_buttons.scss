@@ -4,6 +4,11 @@
   padding: 1em 3em 1em 3em;
   font-weight: 500;
   border-radius: 50px;
+  margin-top: 1em;
+}
+
+.btn-primary input {
+  color: $white;
 }
 
 .btn-primary, .btn-secondary a {
@@ -28,9 +33,16 @@
   color: $white;
   padding: 12px;
   width: 58px;
+  height: 58px;
   font-size: 20px;
 }
 
 .btn-add:hover {
     color: $white;
 }
+
+/** patch bootstrap **/
+input.btn {
+  padding: 0px;
+}
+/** **/
