@@ -12,7 +12,21 @@
 .card {
   padding: 20px;
   border-radius: 20px;
-  box-shadow: 0 4px 10px 2px #e3e3e3;
+  box-shadow: 0 4px 10px 2px #eeeeee;
+
+  animation-duration: 0.4s;
+  animation-name: animate-fade;
+  animation-delay: 0.4s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes animate-fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .inner-card {
