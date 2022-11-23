@@ -1,8 +1,24 @@
-.product img {
+.product {
+
+}
+
+.product-image {
+  display: flex;
   margin-bottom: 2em;
-  border-radius: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  background: $white;
+  width: 40vw;
   aspect-ratio: 1/1;
-  width: 40vh;
-  height: auto;
-  object-fit: fill;
+  border-radius: 20px
+}
+
+.product-image img {
+  width: 40vw;
+  object-fit: contain;
+}
+
+.product-content {
+
+
 }

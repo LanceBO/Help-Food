@@ -31,13 +31,16 @@
 <div class="container text-center">
   <div class="product">
     <!-- content -->
-    <!-- todo à rendre dynamique --><%= cl_image_tag("salade-verte_swnihp") %>
-    <h2> <%= @food.name  %> <%= @food.category %> </h2>
-    <h6> <%= @food.expiration_date %> </h6>
-
-    <button type="button" class="btn btn-primary"><%= link_to "Reserve this food",
-    new_food_booking_path(@food.id)
-    %>
-    </button>
+    <div class="product-image">
+      <!-- todo à rendre dynamique --><%= cl_image_tag("salade-verte_swnihp") %>
+    </div>
+    <div class="product-content">
+      <h2> <%= @food.name  %> <%= @food.category %> </h2>
+      <h6> <%= @food.expiration_date %> </h6>
+      <button type="button" class="btn btn-primary"><%= link_to "Reserve this food",
+      new_food_booking_path(@food.id)
+      %>
+      </button>
+    </div>
   </div>
 </div>
