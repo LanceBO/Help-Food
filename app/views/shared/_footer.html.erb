@@ -5,3 +5,11 @@
     <%= link_to "<i class=\"fa fa-user\"></i><div class=\"footer-text\">Account</div>".html_safe, "/dashboard"%>
   </div>
 </footer>
+
+<!-- js pour les tooltips -->
+<script>
+const tooltips = document.querySelectorAll('.tt')
+  tooltips.forEach(t => {
+    new bootstrap.Tooltip(t)
+  })
+</script>
