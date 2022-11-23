@@ -28,6 +28,10 @@
 
 .btn-secondary {
   padding: 0.5em 1.5em 0.5em 1.5em;
+  color: #6c757d;
+  border: 2px solid #6c757d;
+  border-radius: 30px;
+  background-color: #f4f4f4;
 }
 
 .btn-secondary i {
@@ -49,5 +53,9 @@
 /** patch bootstrap **/
 input.btn {
   padding: 0px;
+}
+
+button.btn.btn-secondary {
+  margin-top: 0;
 }
 /** **/
