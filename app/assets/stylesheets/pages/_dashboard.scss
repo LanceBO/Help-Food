@@ -1,0 +1,30 @@
+.boards {
+  display: inline-grid;
+}
+
+.multiple {
+  margin-bottom: 2em;
+}
+
+.account-pp {
+  width: fit-content;
+  background-color: #ffe8ed;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.account-elements {
+  display: flex;
+}
+
+.account-infos ul {
+  list-style-type: none;
+}
+
+.pills {
+  padding-left: 0px;
+}
+
+.badge {
+  padding: 8px;
+}

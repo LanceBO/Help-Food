@@ -31,6 +31,10 @@ footer {
   background-color: transparent;
 }
 
+a:hover .footer-text {
+  color: #ADADAF;
+}
+
 .active i {
   color: $orange;
 }
