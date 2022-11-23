@@ -33,4 +33,7 @@ class BookingPolicy < ApplicationPolicy
     false
   end
 
+  def dashboard?
+    true
+  end
 end
