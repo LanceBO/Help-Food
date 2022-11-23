@@ -1,4 +1,19 @@
-<p>Hello Dashboard</p>
-<%= @user.first_name  %>
-<%= @user.last_name  %>
-<%= @user.email  %>
+<h1>Account</h1>
+<ul>
+<li><%= @user.first_name  %> </li>
+<li><%= @user.last_name  %></li>
+<li><%= @user.email  %></li>
+</ul>
+<h2> My Bookings </h2>
+<ul>
+<% @bookings.each do |booking|  %>
+<li> <%= booking.food.name  %> </li>
+<% end %>
+</ul>
+
+<h2> My Fridge </h2>
+<ul>
+<% @foods.each do |food| %>
+<li> <%= food.name %> </li>
+<% end %>
+</ul>
