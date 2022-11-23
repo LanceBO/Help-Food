@@ -50,13 +50,11 @@ class BookingsController < ApplicationController
     authorize @booking
   end
 
-
-  def update
-    @booking = Booking.edit(params[:booking_params])
-    authorize @booking
+  def dashboard
+    @bookings = Booking.all
+    @user = current_user
+    authorize @bookings
   end
-
-
 
   private
 
