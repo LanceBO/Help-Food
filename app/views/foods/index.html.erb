@@ -6,9 +6,11 @@
     !
     <% end %>
   </h1>
+  <div class="tt" data-bs-placement="left" title="Add a product">
     <%= link_to new_food_path, :class => "btn btn-primary btn-add" do %>
       <i class="fa-solid fa-plus"></i>
     <% end %>
+  </div>
 </div>
 
 <%= render "foods/card" %>
