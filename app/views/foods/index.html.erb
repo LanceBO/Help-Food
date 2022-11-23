@@ -1,11 +1,15 @@
-<h1> Hello
-
-<% if current_user %>
-<%= current_user.first_name %>,
-<% else %>
-!
-<% end %>
-</h1>
+<div class="navshow">
+  <h1> Hello
+    <% if current_user %>
+    <%= current_user.first_name %>,
+    <% else %>
+    !
+    <% end %>
+  </h1>
+    <%= link_to new_food_path, :class => "btn btn-primary btn-add" do %>
+      <i class="fa-solid fa-plus"></i>
+    <% end %>
+</div>
 
 <%= render "foods/card" %>
 
@@ -15,5 +19,3 @@
 <h2> <%= link_to food.name, food_path(food) %> </h2>
 
 <% end %>-->
-
-<%= link_to "Add a food", new_food_path  %>
