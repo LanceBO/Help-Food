@@ -1,10 +1,10 @@
 <div class="foodcards">
   <% @foods.each do |food| %>
       <div class="card border-0">
-        <%= link_to image_tag("https://fr.rc-cdn.community.thermomix.com/recipeimage/2nc1g3lr-77de7-564089-cfcd2-b67ljhi0/0d0d5043-f22b-4b08-8d9c-2578e0802b37/main/salade-verte.jpg"), food_path(food), class:"card-img-top" %>
-        <div class="card-body">
+        <%= link_to cl_image_tag("salade-verte_swnihp"), food_path(food), class:"card-img-top" %>
+        <div class="card-body text-center">
           <h3><%= link_to food.name, food_path(food) %></h3>
-          <p>Expiry date: <%= food.expiration_date %></p>
+          <div class="expirydate mt-3"><p>Exp. date: <span><%= food.expiration_date %></span></p></div>
         </div>
       </div>
   <% end %>
