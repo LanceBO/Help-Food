@@ -2,6 +2,7 @@
 <%= simple_form_for @food do |f| %>
   <%= f.input :name %>
   <%= f.input :category %>
+  <%= f.input :address %>
   <%= f.input :expiration_date, as: :date %>
   <%= f.button :submit %>
 <% end %>

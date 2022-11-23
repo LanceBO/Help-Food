@@ -4,6 +4,14 @@ class FoodsController < ApplicationController
   def index
     skip_policy_scope
     @foods = Food.all
+    @markers = @foods.geocoded.map do |food|
+      {
+        lat: food.latitude,
+        lng: food.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {food: food}),
+        image_url: helpers.asset_url("logo.png")
+      }
+    end
     authorize @foods
   end
 
@@ -61,6 +69,6 @@ class FoodsController < ApplicationController
   end
 
   def food_params
-    params.require(:food).permit(:name, :category, :expiration_date, :photo)
+    params.require(:food).permit(:name, :category, :expiration_date, :photo, :address)
   end
 end
