@@ -1,5 +1,5 @@
  <div class="card border-0 inner-card multiple">
-      <h2>Bookings</h2>
+      <h2>My bookings : <%= @bookings.count %> </h2>
       <ul class="pills">
         <% @bookings.each do |booking|  %>
         <li class="badge rounded-pill bg-secondary"> <%= booking.food.name  %> </li>
