@@ -32,7 +32,7 @@
     <% if @food.photo.key %>
        <%= cl_image_tag(@food.photo.key) %>
        <% else %>
-       <%= image_tag "fruits-legumes.jpg" %>
+       <%= image_tag "no_image_available.jpg" %>
        <% end %>
     </div>
     <div class="product-content">
