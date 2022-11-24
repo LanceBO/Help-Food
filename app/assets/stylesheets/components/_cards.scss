@@ -1,8 +1,8 @@
 .foodcards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 16px;
-  margin-top: 2em;
+  margin-top: 0em;
 }
 
 .foodcards img {
@@ -12,15 +12,41 @@
 .card {
   padding: 20px;
   border-radius: 20px;
+  box-shadow: 0 4px 10px 2px #eeeeee;
+
+  animation-duration: 0.3s;
+  animation-name: animate-fade;
+  animation-delay: 0.3s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes animate-fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.inner-card {
+  padding: 2em;
 }
 
 .expirydate {
   color: #999999;
   font-size: 14px;
+  bottom: -10px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 146px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.expirydate span {
-  display: block;
+.card form {
+  display: grid;
+  justify-content: space-between;
 }
 
 @media (max-width: 767px) {

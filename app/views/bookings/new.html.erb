@@ -1,9 +1,20 @@
-<h1> Your order </h1>
-<% food = Food.find(params[:food_id]) %>
-<%= food.name  %> <%= food.category  %> <%= food.expiration_date  %>
+<div class="navshow">
+  <div class="backto">
+    <i class="fa-solid fa-chevron-left"></i>
+    <%= link_to "Back to frxidge", foods_path  %>
+  </div>
+</div>
 
-<%= simple_form_for [@food, @booking] do |f| %>
-  <%= f.input :start_date, as: :date %>
-  <%= f.input :end_date, as: :date %>
-  <%= f.button :submit %>
-<% end %>
+<h1 class="text-center">Your food reservation</h1>
+<div class="center-content">
+  <div class="card border-0">
+    <% food = Food.find(params[:food_id]) %>
+    <%= food.name  %> <%= food.category  %> <%= food.expiration_date  %>
+
+    <%= simple_form_for [@food, @booking] do |f| %>
+      <%= f.input :start_date, as: :date %>
+      <%= f.input :end_date, as: :date %>
+      <button class="btn btn-primary"><%= f.button :submit %></button>
+    <% end %>
+  </div>
+</div>

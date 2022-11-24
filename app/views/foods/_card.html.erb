@@ -1,10 +1,11 @@
 <div class="foodcards">
   <% @foods.each do |food| %>
       <div class="card border-0">
-        <%= link_to cl_image_tag("salade-verte_swnihp"), food_path(food), class:"card-img-top" %>
+        <%= link_to cl_image_tag(food.photo.key), food_path(food), class:"card-img-top" %>
         <div class="card-body text-center">
           <h3><%= link_to food.name, food_path(food) %></h3>
-          <div class="expirydate mt-3"><p>Exp. date: <span><%= food.expiration_date %></span></p></div>
+          <p class="category"><%= food.category %></p>
+          <div class="expirydate mt-3"><p><i>Exp. date: <%= food.expiration_date %></i></p></div>
         </div>
       </div>
   <% end %>

@@ -4,12 +4,26 @@
   margin-left: auto;
   margin-right: auto;
   background: $white;
-  width: 20vw;
+  width: 350px;
   aspect-ratio: 1/1;
   border-radius: 20px
 }
 
 .product-image img {
-  width: 20vw;
+  width: 350px;
   object-fit: contain;
+}
+
+.product-content h1 {
+  margin-bottom: 0;
+}
+
+.center-content {
+  display: flex;
+  justify-content: center;
+}
+
+.category {
+  color: #999999;
+  font-size: 16px
 }

@@ -2,7 +2,7 @@
 <div class="navshow">
   <div class="backto">
     <i class="fa-solid fa-chevron-left"></i>
-    <%= link_to "Back to Fridge", foods_path  %>
+    <%= link_to "Back to fridge", foods_path  %>
   </div>
 
   <div class="right-buttons">
@@ -29,14 +29,15 @@
   <div class="product">
     <!-- content -->
     <div class="product-image">
-      <!-- todo à rendre dynamique --><%= cl_image_tag("salade-verte_swnihp") %>
+      <!-- todo à rendre dynamique --><%= cl_image_tag(@food.photo.key) %>
     </div>
     <div class="product-content">
-      <h2> <%= @food.name  %> <%= @food.category %> </h2>
-      <h6> <%= @food.expiration_date %> </h6>
+      <h1><%= @food.name  %></h1>
+      <p class="category"><%= @food.category %></p>
         <%= link_to new_food_booking_path(@food.id) do %>
         <button type="button" class="btn btn-primary">Reserve this food</button>
         <% end %>
+      <div class="expirydate mt-3"><p>Exp. date: <%= @food.expiration_date %> </h6></p></div>
     </div>
   </div>
 </div>

@@ -1,4 +1,4 @@
-.footer {
+footer {
   background-color: #fff;
   padding: 3em;
   width: 100%;
@@ -29,6 +29,10 @@
 
 .icon-bar a:hover {
   background-color: transparent;
+}
+
+a:hover .footer-text {
+  color: #ADADAF;
 }
 
 .active i {

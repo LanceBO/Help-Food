@@ -57,14 +57,34 @@ class BookingsController < ApplicationController
   end
 
   def dashboard
+    @user = current_user
+    @bookings = Booking.where(user: @user)
+    authorize @bookings
+    @foods = Food.where(user: @user)
   end
 
+  def bag
+    @user = current_user
+    @bookings = Booking.where(user: @user)
+    authorize @bookings
+  end
 
+  def approve
+    @booking = Booking.find_by_id(params[:id])
+     @booking.update(state: "approved")
+     if @booking.state == "approved"
+       flash[:success] = "Booking successfully approved"
+       redirect_to bookings_path
+     else
+       flash[:error] = "Booking not approved"
+       redirect_to bookings_path
+     end
+  end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :user_id, :food_id)
+    params.require(:booking).permit(:start_date, :end_date)
   end
 
 end
