@@ -1,12 +1,19 @@
+.product {
+  display: flex;
+  justify-content: center;
+}
+
 .product-image {
   display: flex;
-  margin-bottom: 2em;
-  margin-left: auto;
-  margin-right: auto;
-  background: $white;
+  margin-right: 4em;
+  background: #FFFFFF;
   width: 350px;
   aspect-ratio: 1/1;
-  border-radius: 20px
+  border-radius: 20px;
+}
+
+.product-content {
+  text-align: left;
 }
 
 .product-image img {
