@@ -3,7 +3,8 @@ class FoodsController < ApplicationController
 
   def index
     skip_policy_scope
-    @foods = Food.all
+    @foods = Food.includes(:bookings).where(bookings: {id: nil})
+
     @markers = @foods.geocoded.map do |food|
       {
         lat: food.latitude,
@@ -12,7 +13,9 @@ class FoodsController < ApplicationController
         image_url: helpers.asset_url("logo.png")
       }
     end
+
     authorize @foods
+
   end
 
   def show
