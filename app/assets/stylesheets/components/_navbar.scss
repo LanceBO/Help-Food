@@ -10,8 +10,7 @@
   width: 6em;
 }
 
-.navbar-brand { /** overwrite bootstrap **/
-  width: 6em;
-  margin-left: auto;
-  margin-right: auto;
+.navbar-brand {
+  margin-top: 5px;
+  margin-right: 1em;
 }

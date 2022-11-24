@@ -35,3 +35,30 @@
   color: #999999;
   font-size: 16px
 }
+
+
+@media (max-width: 767px) {
+  .product {
+    display: block;
+    justify-content: center;
+  }
+
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+
+  .product-image {
+    margin-right: 0em;
+    background: #FFFFFF;
+    width: fit-content;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .product-content {
+    text-align: center;
+  }
+}

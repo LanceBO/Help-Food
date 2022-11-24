@@ -1,10 +1,20 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon py-3 px-3">
-  <div class="container-fluid">
-    <%= link_to "/foods", class: "navbar-brand" do %>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon py-3 px-5">
+  <div class="helpfoodnav">
+    <%= link_to "/", class: "navbar-brand" do %>
       <%= image_tag "logo.svg" %>
     <% end %>
+    <div class="search-bar">
+      <%= form_with url: foods_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Search for a food"
+        %>
+        <%= button_tag(type: "submit", class: "") do %>
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <% end %>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <% end %>
     </div>
   </div>
 </div>
