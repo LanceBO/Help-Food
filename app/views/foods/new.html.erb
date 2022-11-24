@@ -11,6 +11,7 @@
     <%= simple_form_for @food do |f| %>
       <%= f.input :name %>
       <%= f.input :category %>
+      <%= f.input :address %>
       <%= f.input :expiration_date, as: :date %>
       <%= f.input :photo, as: :file %>
       <button class="btn btn-primary"><%= f.button :submit %></button>

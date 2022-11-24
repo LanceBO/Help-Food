@@ -29,7 +29,7 @@
   <div class="product">
     <!-- content -->
     <div class="product-image">
-      <!-- todo à rendre dynamique --><%= cl_image_tag("salade-verte_swnihp") %>
+      <!-- todo à rendre dynamique --><%= cl_image_tag(@food.photo.key) %>
     </div>
     <div class="product-content">
       <h1><%= @food.name  %></h1>
