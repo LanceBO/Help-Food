@@ -32,10 +32,18 @@
       </div>
     </div>
     <div class="card border-0 inner-card multiple">
-      <h2>My food</h2>
+      <h2>My foods</h2>
       <ul class="pills">
         <% @foods.each do |food| %>
         <li class="badge rounded-pill bg-secondary"> <%= food.name %> </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="card border-0 inner-card multiple">
+      <h2>My bookings</h2>
+      <ul class="pills">
+        <% @bookings.each do |booking| %>
+        <li class="badge rounded-pill bg-secondary"> <%= booking.food.name %> </li>
         <% end %>
       </ul>
     </div>
