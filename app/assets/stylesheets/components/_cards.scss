@@ -56,8 +56,13 @@
 @media (max-width: 767px) {
   .foodcards {
     grid-template-columns: 1fr 1fr;
+    width: 100%;
   }
   .expirydate {
+    display: none;
+  }
+
+  #map {
     display: none;
   }
 }

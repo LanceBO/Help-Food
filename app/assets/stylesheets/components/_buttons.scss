@@ -47,7 +47,19 @@
 }
 
 .btn-add:hover {
-    color: $white;
+  color: $white;
+}
+
+.search-bar button {
+  margin-left: -37px;
+  padding: 0px 10px 0px 10px;
+  color: #666;
+  border: 1px solid #ced4da;
+  background: $white;
+  border-left: 0px;
+  border-radius: 5px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
 }
 
 /** patch bootstrap **/
