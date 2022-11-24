@@ -70,6 +70,7 @@ class FoodsController < ApplicationController
     authorize @food
   end
 
+
   private
 
   def set_food
