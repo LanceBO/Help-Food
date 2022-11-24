@@ -4,8 +4,9 @@
       <% if food.photo.key %>
         <%= link_to cl_image_tag(food.photo.key), food_path(food), class:"card-img-top" %>
         <% else %>
-
-          <%= image_tag "fruits-legumes.jpg", class:"card-img-top" %>
+        <%= link_to food_path(food) do %>
+          <%= image_tag "fruits-legumes.jpg", class: "card-img-top" %>
+        <% end %>
         <% end %>
         <div class="card-body text-center">
           <h3><%= link_to food.name, food_path(food) %></h3>
