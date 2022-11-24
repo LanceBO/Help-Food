@@ -5,7 +5,11 @@
   </div>
 </div>
 
-<h1 class="text-center">Your food reservation</h1>
+<h1 class="text-center">
+  Your
+  <% food = Food.find(params[:food_id]) %>
+  <%= food.name  %> booking
+</h1>
 <div class="center-content">
   <div class="card border-0">
     <% food = Food.find(params[:food_id]) %>

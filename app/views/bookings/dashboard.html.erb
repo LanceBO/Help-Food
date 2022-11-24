@@ -17,7 +17,8 @@
     <div class="card border-0 inner-card multiple">
       <div class="account-elements">
         <div class="account-pp">
-          <%= cl_image_tag("account-fruit", :width => 70) %>
+          <!-- cloudinary link <%= cl_image_tag("account-fruit", :width => 70) %> -->
+          <%= image_tag("account-fruit", :width => 70) %>
         </div>
         <div class="account-infos">
           <ul>
@@ -31,7 +32,7 @@
       </div>
     </div>
     <div class="card border-0 inner-card multiple">
-      <h2>Fridge</h2>
+      <h2>My food</h2>
       <ul class="pills">
         <% @foods.each do |food| %>
         <li class="badge rounded-pill bg-secondary"> <%= food.name %> </li>
