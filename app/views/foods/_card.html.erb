@@ -7,6 +7,9 @@
         <%= link_to food_path(food) do %>
           <%= image_tag "fruits-legumes.jpg", class: "card-img-top" %>
         <% end %>
+
+
+          <%= image_tag "no_image_available.jpg", class:"card-img-top" %>
         <% end %>
         <div class="card-body text-center">
           <h3><%= link_to food.name, food_path(food) %></h3>
