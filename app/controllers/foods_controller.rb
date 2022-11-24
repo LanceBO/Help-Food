@@ -3,8 +3,14 @@ class FoodsController < ApplicationController
 
   def index
     skip_policy_scope
-    @foods = Food.includes(:bookings).where(bookings: {id: nil})
-
+    # @foods = Food.includes(:bookings).where(bookings: {id: nil})
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR category ILIKE :query"
+      @foods = Food.includes(:bookings).where(bookings: {id: nil}).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @foods = Food.includes(:bookings).where(bookings: {id: nil})
+    end
+    
     @markers = @foods.geocoded.map do |food|
       {
         lat: food.latitude,
@@ -15,7 +21,6 @@ class FoodsController < ApplicationController
     end
 
     authorize @foods
-
   end
 
   def show

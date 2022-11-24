@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gem "pundit"
 ruby "3.1.2"
 
+# search
+gem "pg_search"
+
 #gemfile
 gem "geocoder"
 

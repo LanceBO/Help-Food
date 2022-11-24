@@ -1,7 +1,7 @@
 <div class="navshow">
   <div class="backto">
     <i class="fa-solid fa-chevron-left"></i>
-    <%= link_to "Back to product", food_path  %>
+    <%= link_to "Back to food", food_path  %>
   </div>
 </div>
 
@@ -10,7 +10,7 @@
   <div class="card border-0 inner-card">
     <%= simple_form_for @food do |f| %>
       <%= f.input :name %>
-      <%= f.input :category %>
+      <%= f.input :category, collection: Food::CATEGORIES %>
       <%= f.input :expiration_date, as: :date %>
       <button class="btn btn-primary"><%= f.button :submit %></button>
     <% end %>
