@@ -5,7 +5,7 @@
         <%= link_to cl_image_tag(food.photo.key), food_path(food), class:"card-img-top" %>
         <% else %>
         <%= link_to food_path(food) do %>
-          <%= image_tag "fruits-legumes.jpg", class: "card-img-top" %>
+          <%= image_tag "no_image_available.jpg", class: "card-img-top" %>
         <% end %>
 
 
@@ -14,7 +14,7 @@
         <div class="card-body text-center">
           <h3><%= link_to food.name, food_path(food) %></h3>
           <p class="category"><%= food.category %></p>
-          <div class="expirydate mt-3"><p><i>Exp. date: <%= food.expiration_date %></i></p></div>
+          <div class="expirydate mt-3"><p><i>Exp. date: <%= food.expiration_date.strftime('%d/%m/%Y') %></i></p></div>
         </div>
       </div>
   <% end %>

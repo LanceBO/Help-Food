@@ -10,13 +10,13 @@ class FoodsController < ApplicationController
     else
       @foods = Food.includes(:bookings).where(bookings: {id: nil})
     end
-    
+
     @markers = @foods.geocoded.map do |food|
       {
         lat: food.latitude,
         lng: food.longitude,
         info_window: render_to_string(partial: "info_window", locals: {food: food}),
-        image_url: helpers.asset_url("fruits-legumes.jpg")
+        image_url: helpers.asset_url("https://cdn-icons-png.flaticon.com/512/59/59077.png")
       }
     end
 
