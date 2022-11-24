@@ -63,7 +63,23 @@ class BookingsController < ApplicationController
     @foods = Food.where(user: @user)
   end
 
+  def bag
+    @user = current_user
+    @bookings = Booking.where(user: @user)
+    authorize @bookings
+  end
 
+  def approve
+    @booking = Booking.find_by_id(params[:id])
+     @booking.update(state: "approved")
+     if @booking.state == "approved"
+       flash[:success] = "Booking successfully approved"
+       redirect_to bookings_path
+     else
+       flash[:error] = "Booking not approved"
+       redirect_to bookings_path
+     end
+  end
 
   private
 
