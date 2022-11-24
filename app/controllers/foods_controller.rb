@@ -9,7 +9,7 @@ class FoodsController < ApplicationController
         lat: food.latitude,
         lng: food.longitude,
         info_window: render_to_string(partial: "info_window", locals: {food: food}),
-        image_url: helpers.asset_url("logo.png")
+        image_url: helpers.asset_url("fruits-legumes.jpg")
       }
     end
     authorize @foods

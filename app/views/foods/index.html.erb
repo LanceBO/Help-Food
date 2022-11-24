@@ -12,14 +12,22 @@
     <% end %>
   </div>
 </div>
+<div class="container">
+  <div class="row">
 
-<%= render "foods/card" %>
+    <div class="col-6">
+      <%= render "foods/card" %>
+    </div>
 
-<div style="width: 50%; height: 300px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    <div class="col-6" style="width: 50%; height: 300px;"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">>
+    </div>
+
+  </div>
 </div>
+
 
 <!-- <% @foods.each do |food| %>
 
