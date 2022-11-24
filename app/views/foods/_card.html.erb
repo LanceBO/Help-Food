@@ -1,8 +1,12 @@
 <div class="foodcards">
   <% @foods.each do |food| %>
       <div class="card border-0">
-      <%= image_tag "fruits-legumes.jpg" %>
+      <% if food.photo.key %>
         <%= link_to cl_image_tag(food.photo.key), food_path(food), class:"card-img-top" %>
+        <% else %>
+
+          <%= image_tag "fruits-legumes.jpg", class:"card-img-top" %>
+        <% end %>
         <div class="card-body text-center">
           <h3><%= link_to food.name, food_path(food) %></h3>
           <p class="category"><%= food.category %></p>

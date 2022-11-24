@@ -29,8 +29,11 @@
   <div class="product">
     <!-- content -->
     <div class="product-image">
-          <!-- image par défaut todo faire condtion (if user doesn't input an image) --> <%= image_tag "fruits-legumes.jpg" %>
-      <!-- todo à rendre dynamique --><%= cl_image_tag(@food.photo.key) %>
+    <% if @food.photo.key %>
+       <%= cl_image_tag(@food.photo.key) %>
+       <% else %>
+       <%= image_tag "fruits-legumes.jpg" %>
+       <% end %>
     </div>
     <div class="product-content">
       <h1><%= @food.name  %></h1>
