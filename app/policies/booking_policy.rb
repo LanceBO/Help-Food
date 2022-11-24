@@ -37,4 +37,8 @@ class BookingPolicy < ApplicationPolicy
     true
   end
 
+  def bag?
+    true
+  end
+
 end
