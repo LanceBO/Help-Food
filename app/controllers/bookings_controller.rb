@@ -56,6 +56,9 @@ class BookingsController < ApplicationController
     authorize @booking
   end
 
+  def dashboard
+  end
+
 
 
   private
