@@ -1,5 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
+  background-color: $white;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.05);
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -12,5 +14,5 @@
 
 .navbar-brand {
   margin-top: 5px;
-  margin-right: 1em;
+  margin-right: 5vw;
 }

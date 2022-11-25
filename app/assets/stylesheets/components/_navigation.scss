@@ -6,5 +6,13 @@
 }
 
 .backto {
-  color: $dark-gray;
+  color: #555;
+}
+
+.backto:hover{
+  color: #000;
+}
+
+.backto a {
+  color: #555;
 }
