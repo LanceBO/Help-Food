@@ -1,8 +1,8 @@
 <% @bookings.reverse.each do |booking|  %>
 <div class="card border-0 inner-card multiple">
   <div class="account-elements">
+    <i class="fa fa-check"></i>
     <div class="bag-img">
-      <!-- cloudinary link <%= cl_image_tag("account-fruit", :width => 70) %> -->
       <% if booking.food.photo.key %>
        <%= cl_image_tag(booking.food.photo.key) %>
        <% else %>
