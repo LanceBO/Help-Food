@@ -26,10 +26,20 @@
   margin-bottom: 0;
 }
 
+.product-content select{
+  background-color: $white;
+}
+
+.product-content .simple_form {
+
+}
+
 .center-content {
   display: flex;
   justify-content: center;
 }
+
+
 
 @media (max-width: 767px) {
   .product {
