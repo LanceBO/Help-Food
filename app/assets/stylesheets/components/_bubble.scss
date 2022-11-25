@@ -1,0 +1,17 @@
+.bubble {
+  position: relative;
+  top: 12px;
+  right: 44px;
+}
+
+.bubble-element {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: $orange;
+  text-align: center;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: $white;
+}

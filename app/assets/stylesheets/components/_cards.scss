@@ -25,6 +25,14 @@
   animation-fill-mode: backwards;
 }
 
+.category {
+  color: #999999;
+  font-size: 16px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 .homecard {
   aspect-ratio: 1/1;
 }
