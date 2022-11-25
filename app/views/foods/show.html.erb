@@ -38,10 +38,32 @@
     <div class="product-content">
       <h1><%= @food.name  %></h1>
       <p class="category"><%= @food.category %></p>
-        <%= link_to new_food_booking_path(@food.id) do %>
-        <button type="button" class="btn btn-primary">Reserve this food</button>
-        <% end %>
       <div class="expirydate mt-3"><p>Exp. date: <%= @food.expiration_date %> </h6></p></div>
     </div>
+  </div>
+
+</div>
+<div class="navshow">
+  <div class="backto">
+    <i class="fa-solid fa-chevron-left"></i>
+    <%= link_to "Back to fridge", foods_path  %>
+  </div>
+</div>
+
+<h1 class="text-center">
+  Your
+  <% food = Food.find(params[:id]) %>
+  <%= food.name  %> booking
+</h1>
+<div class="center-content">
+  <div class="card border-0">
+    <% food = Food.find(params[:id]) %>
+    <%= food.name  %> <%= food.category  %> <%= food.expiration_date  %>
+
+    <%= simple_form_for [@food, @booking] do |f| %>
+      <%= f.input :start_date, as: :date %>
+      <%= f.input :end_date, as: :date %>
+      <button class="btn btn-primary"><%= f.button :submit %></button>
+    <% end %>
   </div>
 </div>
