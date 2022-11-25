@@ -41,7 +41,7 @@
         <%= link_to new_food_booking_path(@food.id) do %>
         <button type="button" class="btn btn-primary">Reserve this food</button>
         <% end %>
-      <div class="expirydate mt-3"><p>Exp. date: <%= @food.expiration_date %> </h6></p></div>
+      <div class="expirydate mt-3"><p>Exp. date: <%= @food.expiration_date.strftime('%d/%m/%Y') %> </h6></p></div>
     </div>
   </div>
 </div>
