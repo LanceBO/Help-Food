@@ -25,6 +25,12 @@
   animation-fill-mode: backwards;
 }
 
+.card h3 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 .category {
   color: #999999;
   font-size: 16px;
