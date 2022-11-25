@@ -47,7 +47,7 @@
     <%= simple_form_for [@food, @booking] do |f| %>
       <%= f.input :start_date, as: :date %>
       <%= f.input :end_date, as: :date %>
-      <button class="btn btn-primary"><%= f.button :submit %></button>
+      <button class="btn btn-primary"><%= f.button :submit, "Reserve #{@food.name}" %></button>
     <% end %>
     </div>
   </div>
