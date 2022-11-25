@@ -13,7 +13,7 @@
 <div class="center-content">
   <div class="card border-0">
     <% food = Food.find(params[:food_id]) %>
-    <%= food.name  %> <%= food.category  %> <%= food.expiration_date  %>
+    <%= food.name  %> <%= food.category  %> <%= food.expiration_date.strftime('%d/%m/%Y') %>
 
     <%= simple_form_for [@food, @booking] do |f| %>
       <%= f.input :start_date, as: :date %>
