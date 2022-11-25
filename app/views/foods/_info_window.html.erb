@@ -1,2 +1,11 @@
-<h2><%= food.name %></h2>
-<p><%= food.address %></p>
+<div>
+  <% if food.photo.key %>
+      <%= link_to cl_image_tag(food.photo.key), food_path(food), class:"card-img-top" %>
+  <% else %>
+    <%= link_to food_path(food) do %>
+      <%= image_tag "no_image_available.jpg", style:"height:150px;" %>
+    <% end %>
+  <% end %>
+  <h2><%= link_to food.name, food_path(food)%></h2>
+  <p><%= food.address %></p>
+</div>
