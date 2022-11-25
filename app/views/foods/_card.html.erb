@@ -1,18 +1,22 @@
 <div class="foodcards">
-  <% @foods.each do |food| %>
-      <div class="card border-0">
-      <% if food.photo.key %>
-        <%= link_to cl_image_tag(food.photo.key), food_path(food), class:"card-img-top homecard" %>
-      <% else %>
-      <%= link_to food_path(food) do %>
-        <%= image_tag "no_image_available.jpg", class: "card-img-top homecard" %>
-      <% end %>
+  <% if @foods.empty? %>
+    No foods matching your search
+  <% else %>
+    <% @foods.each do |food| %>
+        <div class="card border-0">
+        <% if food.photo.key %>
+          <%= link_to cl_image_tag(food.photo.key), food_path(food), class:"card-img-top homecard" %>
+        <% else %>
+        <%= link_to food_path(food) do %>
+          <%= image_tag "no_image_available.jpg", class: "card-img-top homecard" %>
         <% end %>
-        <div class="card-body text-center">
-          <h3><%= link_to food.name, food_path(food) %></h3>
-          <p class="category"><%= food.category %></p>
-          <div class="expirydate mt-3"><p><i>Exp. date: <%= food.expiration_date.strftime('%d/%m/%Y') %></i></p></div>
+          <% end %>
+          <div class="card-body text-center">
+            <h3><%= link_to food.name, food_path(food) %></h3>
+            <p class="category"><%= food.category %></p>
+            <div class="expirydate mt-3"><p><i>Exp. date: <%= food.expiration_date.strftime('%d/%m/%Y') %></i></p></div>
+          </div>
         </div>
-      </div>
+    <% end %>
   <% end %>
 </div>
