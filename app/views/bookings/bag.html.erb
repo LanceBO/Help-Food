@@ -1,8 +1,18 @@
- <div class="card border-0 inner-card multiple">
-      <h2>My bookings : <%= @bookings.count %> </h2>
-      <ul class="pills">
-        <% @bookings.each do |booking|  %>
-        <li class="badge rounded-pill bg-secondary"> <%= booking.food.name  %> </li>
-        <% end %>
-      </ul>
+ <div class="navshow">
+  <div class="backto">
+    <i class="fa-solid fa-chevron-left"></i>
+    <%= link_to "Back to home", foods_path  %>
+  </div>
+</div>
+
+
+<div class="center-content">
+  <div class="boards">
+    <div class="navshow mb-0 mt-0">
+      <h1>Bag</h1>
     </div>
+    <%= render "bookings/items" %>
+  </div>
+</div>
+
+<!-- Pour le nombre total de produit dans panier @bookings.count -->

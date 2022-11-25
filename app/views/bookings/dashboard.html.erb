@@ -40,12 +40,10 @@
       </ul>
     </div>
     <div class="card border-0 inner-card multiple">
-      <h2>My bookings</h2>
-      <ul class="pills">
-        <% @bookings.each do |booking| %>
-        <li class="badge rounded-pill bg-secondary"> <%= booking.food.name %> </li>
-        <% end %>
-      </ul>
+      <h2>My bag</h2>
+      <%= link_to "/bag" do %>
+        <button type="button" class="btn btn-secondary"><i class="fa fa-bag-shopping"></i>Check my bag</button>
+      <% end %>
     </div>
   </div>
 </div>
