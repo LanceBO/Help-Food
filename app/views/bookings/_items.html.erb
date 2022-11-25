@@ -1,0 +1,23 @@
+<% @bookings.each do |booking|  %>
+<div class="card border-0 inner-card multiple">
+  <div class="account-elements">
+    <div class="bag-img">
+      <!-- cloudinary link <%= cl_image_tag("account-fruit", :width => 70) %> -->
+      <% if booking.food.photo.key %>
+       <%= cl_image_tag(booking.food.photo.key) %>
+       <% else %>
+       <%= image_tag "no_image_available.jpg" %>
+    <% end %>
+    </div>
+  <div class="account-infos">
+    <ul>
+      <li><h5><%= booking.food.name %></h5></li>
+      <li><%= booking.food.category %></li>
+      <div class="text-secondary">
+      <li><%= booking.food.expiration_date %></li>
+      </div>
+    </ul>
+    </div>
+  </div>
+</div>
+<% end %>
