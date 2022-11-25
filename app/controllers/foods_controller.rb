@@ -27,6 +27,9 @@ class FoodsController < ApplicationController
     skip_policy_scope
     @food = Food.find(params[:id])
     authorize @food
+    @food = Food.find(params[:id])
+    @booking = Booking.new
+    authorize @booking
   end
 
   def new
