@@ -14,3 +14,18 @@
 .session-page {
   margin-left: 3em;
 }
+
+@media (max-width: 767px) {
+  .session-pages {
+    display: block;
+  }
+
+  .session-pages {
+    margin-left: 0;
+  }
+
+  .session-form {
+    width: 100%;
+    margin-bottom: 2em;
+  }
+}
